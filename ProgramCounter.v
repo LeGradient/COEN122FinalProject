@@ -1,9 +1,3 @@
-/*
-    Includes:
-        register to store PC value
-        adder to increment PC value
-        MUX to choose between PC + 1 and $rs
-*/
 module ProgramCounter (
         input clk,
         input[31:0] in,
