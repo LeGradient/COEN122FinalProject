@@ -12,7 +12,7 @@ module PCControl (
         output reg out
     );
 
-    always @(*)
+    always @(in_ctrl_branch or in_ctrl_btype or in_ctrl_jump or in_ctrl_neg or in_ctrl_zero)
         out = in_ctrl_jump ||
             (in_ctrl_branch && !in_ctrl_btype && !in_ctrl_neg && in_ctrl_zero) ||
             (in_ctrl_branch && in_ctrl_btype && in_ctrl_neg);
