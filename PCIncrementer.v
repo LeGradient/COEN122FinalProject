@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module PCIncrementer (
         input clk,
         input [31:0] in_pc,
