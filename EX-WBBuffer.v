@@ -79,5 +79,4 @@ module exwbbuffer (
         out_rd = rd_buff;
     end
 
-
 endmodule
