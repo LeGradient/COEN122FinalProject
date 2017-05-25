@@ -2,10 +2,12 @@
 
 module ifidbuffer(
     input clk,
+
     input [32:0] in_pc,
     input [32:0] in_inst,
-    output [32:0] out_pc,
-    output [32:0] out_inst
+    
+    output reg [32:0] out_pc,
+    output reg [32:0] out_inst
     );
     
     reg [32:0] pc_buff;

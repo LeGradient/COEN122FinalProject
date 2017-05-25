@@ -18,18 +18,18 @@ module exwbbuffer (
     input [5:0] in_rd,
 
 	/* WB Control */
-    output out_ctrl_regwrt,
-    output out_ctrl_branch,
-    output out_ctrl_btype,
-    output out_ctrl_jump,
-    output out_ctrl_memtoreg,
-    output out_ctrl_neg,
-    output out_ctrl_zero,
+    output reg out_ctrl_regwrt,
+    output reg out_ctrl_branch,
+    output reg out_ctrl_btype,
+    output reg out_ctrl_jump,
+    output reg out_ctrl_memtoreg,
+    output reg out_ctrl_neg,
+    output reg out_ctrl_zero,
     
     /* WB Data */
-    output [32:0] out_memdata,
-    output [32:0] out_aluresult,
-    output [5:0] out_rd
+    output reg [32:0] out_memdata,
+    output reg [32:0] out_aluresult,
+    output reg [5:0] out_rd
 
 	);
     

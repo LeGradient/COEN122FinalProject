@@ -25,25 +25,25 @@ module idexbuffer(
     input [5:0] in_rd,
 
     /* WB Control */
-    output out_ctrl_regwrt,
-    output out_ctrl_branch,
-    output out_ctrl_btype,
-    output out_ctrl_jump,
-    output out_ctrl_memtoreg,
+    output reg out_ctrl_regwrt,
+    output reg out_ctrl_branch,
+    output reg out_ctrl_btype,
+    output reg out_ctrl_jump,
+    output reg out_ctrl_memtoreg,
 
     /* EX Control */
-    output out_ctrl_memrd,
-    output out_ctrl_memwrt,
-    output [3:0] out_ctrl_aluop,
-    output out_ctrl_alusrc1,
-    output out_ctrl_alusrc0,
+    output reg out_ctrl_memrd,
+    output reg out_ctrl_memwrt,
+    output reg [3:0] out_ctrl_aluop,
+    output reg out_ctrl_alusrc1,
+    output reg out_ctrl_alusrc0,
 
     /* EX Data */
-    output [32:0] out_pc,
-    output [32:0] out_rs,
-    output [32:0] out_rt,
-    output [32:0] out_x,
-    output [5:0] out_rd
+    output reg [32:0] out_pc,
+    output reg [32:0] out_rs,
+    output reg [32:0] out_rt,
+    output reg [32:0] out_x,
+    output reg [5:0] out_rd
     );
     
     /* WB Control Bufffer */
