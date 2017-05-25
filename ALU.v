@@ -5,20 +5,25 @@ module ALU (
         input [31:0] in_a,
         input [31:0] in_b,
         input [2:0] ctrl_aluop,
-        output reg [31:0] out
+        output reg [31:0] out_result,
+        output reg out_zero,
+        output reg out_neg
     );
 
     always @(posedge clk) begin
         if (ctrl_aluop == 'b100)
-            out = in_b + in_a;
+            out_result = in_b + in_a;
         else if (ctrl_aluop == 'b010)
-            out = in_a + 1;
+            out_result = in_a + 1;
         else if (ctrl_aluop == 'b001)
-            out = -in_a;
+            out_result = -in_a;
         else if (ctrl_aluop == 'b000)
-            out = in_b - in_a;
+            out_result = in_b - in_a;
         else if (ctrl_aluop == 'b111)
-            out = in_a;
+            out_result = in_a;
+
+        out_zero = out_result == 0;
+        out_neg = out_result < 0;
     end
 
 endmodule // ALU
