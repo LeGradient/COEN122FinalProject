@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 module ALU (
         input clk,
         input [31:0] in_a,

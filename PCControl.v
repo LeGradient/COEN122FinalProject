@@ -1,3 +1,5 @@
+`timescale 1ns / 1ps
+
 /*
     in_ctrl_btype:
         0: BRZ - branch if zero

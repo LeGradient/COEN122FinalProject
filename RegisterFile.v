@@ -1,0 +1,29 @@
+`timescale 1ns / 1ps
+
+module RegisterFile (
+        input clk,
+        input ctrl_regwrt,
+        input [5:0] in_rs,
+        input [5:0] in_rt,
+        input [5:0] in_rd,
+        input [31:0] in_rdval,
+        output reg [31:0] out_rsval,
+        output reg [31:0] out_rtval
+    );
+
+    integer i;
+    reg [31:0] regfile [63:0];
+
+    initial begin
+        for (i = 0; i < 64; i = i + 1)
+            regfile[i] = 0;
+    end
+
+    always @(posedge clk) begin
+        if (ctrl_regwrt)
+            regfile[in_rd] = in_rdval;
+        out_rsval = regfile[in_rs];
+        out_rtval = regfile[in_rt];
+    end
+
+endmodule // RegisterFile
