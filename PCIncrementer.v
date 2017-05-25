@@ -1,7 +1,7 @@
 module PCIncrementer (
         input clk,
-        input in_pc,
-        output reg out_pc
+        input [31:0] in_pc,
+        output reg [31:0] out_pc
     );
 
     always @(posedge clk)
