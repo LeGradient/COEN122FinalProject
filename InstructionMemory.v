@@ -3,7 +3,7 @@
 module InstructionMemory (
         input clk,
         input [31:0] in_pc,
-        output reg [31:0] out_instr
+        output reg [31:0] out_inst
     );
 
     integer i;
@@ -15,6 +15,6 @@ module InstructionMemory (
     end
 
     always @(posedge clk)
-        out_instr = imem[in_pc];
+        out_inst = imem[in_pc];
 
 endmodule // InstructionMemory
