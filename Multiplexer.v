@@ -1,10 +1,10 @@
 `timescale 1ns / 1ps
 
 module Multiplexer(
-    input in_data0,
-    input in_data1,
+    input [31:0] in_data0,
+    input [31:0] in_data1,
     input select,
-    output reg out_data
+    output reg [31:0] out_data
     );
     
     always @ (in_data0 or in_data1 or select)
