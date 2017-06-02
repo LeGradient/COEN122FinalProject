@@ -19,5 +19,5 @@ add     $3, $3, $6  # add a_i to sum
 sub		$7, $5, $1  # get i - n
 brn     $4          # branch to top of loop if i - n < 0
 
-nop
-nop
+nop					# no op to avoid control hazard
+nop					# no op to avoid control hazard
