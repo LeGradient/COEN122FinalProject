@@ -13,8 +13,8 @@ module EX-WBBuffer(
     input in_ctrl_zero,
 
     /* WB Data */
-    input [32:0] in_memdata,
-    input [32:0] in_aluresult,
+    input [31:0] in_memdata,
+    input [31:0] in_aluresult,
     input [5:0] in_rd,
 
 	/* WB Control */
@@ -27,8 +27,8 @@ module EX-WBBuffer(
     output reg out_ctrl_zero,
     
     /* WB Data */
-    output reg [32:0] out_memdata,
-    output reg [32:0] out_aluresult,
+    output reg [31:0] out_memdata,
+    output reg [31:0] out_aluresult,
     output reg [5:0] out_rd
 
 	);

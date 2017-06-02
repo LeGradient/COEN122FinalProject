@@ -3,15 +3,15 @@
 module IF-IDBuffer(
     input clk,
 
-    input [32:0] in_pc,
-    input [32:0] in_inst,
+    input [31:0] in_pc,
+    input [31:0] in_inst,
     
-    output reg [32:0] out_pc,
-    output reg [32:0] out_inst
+    output reg [31:0] out_pc,
+    output reg [31:0] out_inst
     );
     
-    reg [32:0] pc_buff;
-    reg [32:0] inst_buff;
+    reg [31:0] pc_buff;
+    reg [31:0] inst_buff;
     
     always@(posedge clk) begin
         pc_buff = in_pc;
