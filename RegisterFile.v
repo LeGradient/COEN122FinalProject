@@ -2,7 +2,7 @@
 
 module RegisterFile (
         input clk,
-        input ctrl_regwrt,
+        input in_ctrl_regwrt,
         input [5:0] in_rs,
         input [5:0] in_rt,
         input [5:0] in_rd,
@@ -20,7 +20,7 @@ module RegisterFile (
     end
 
     always @(posedge clk) begin
-        if (ctrl_regwrt)
+        if (in_ctrl_regwrt)
             regfile[in_rd] = in_rdval;
         out_rsval = regfile[in_rs];
         out_rtval = regfile[in_rt];

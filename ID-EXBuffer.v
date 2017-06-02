@@ -13,15 +13,15 @@ module ID-EXBuffer(
     /* EX Control */
     input in_ctrl_memrd,
     input in_ctrl_memwrt,
-    input [3:0] in_ctrl_aluop,
+    input [2:0] in_ctrl_aluop,
     input in_ctrl_alusrc1,
     input in_ctrl_alusrc0,
 
     /* EX Data */
-    input [32:0] in_pc,
-    input [32:0] in_rs,
-    input [32:0] in_rt,
-    input [32:0] in_x,
+    input [31:0] in_pc,
+    input [31:0] in_rs,
+    input [31:0] in_rt,
+    input [31:0] in_x,
     input [5:0] in_rd,
 
     /* WB Control */
@@ -34,15 +34,15 @@ module ID-EXBuffer(
     /* EX Control */
     output reg out_ctrl_memrd,
     output reg out_ctrl_memwrt,
-    output reg [3:0] out_ctrl_aluop,
+    output reg [2:0] out_ctrl_aluop,
     output reg out_ctrl_alusrc1,
     output reg out_ctrl_alusrc0,
 
     /* EX Data */
-    output reg [32:0] out_pc,
-    output reg [32:0] out_rs,
-    output reg [32:0] out_rt,
-    output reg [32:0] out_x,
+    output reg [31:0] out_pc,
+    output reg [31:0] out_rs,
+    output reg [31:0] out_rt,
+    output reg [31:0] out_x,
     output reg [5:0] out_rd
     );
     
@@ -56,15 +56,15 @@ module ID-EXBuffer(
     /* EX Control Buffer */
     reg ctrl_memrd_buff;
     reg ctrl_memwrt_buff;
-    reg [3:0] ctrl_aluop_buff;
+    reg [2:0] ctrl_aluop_buff;
     reg ctrl_alusrc1_buff;
     reg ctrl_alusrc0_buff;
 
     /* EX Data Buffer */ 
-    reg [32:0] pc_buff;
-    reg [32:0] rs_buff;
-    reg [32:0] rt_buff;
-    reg [32:0] x_buff;
+    reg [31:0] pc_buff;
+    reg [31:0] rs_buff;
+    reg [31:0] rt_buff;
+    reg [31:0] x_buff;
     reg [5:0] rd_buff;
     
     always@(posedge clk) begin
