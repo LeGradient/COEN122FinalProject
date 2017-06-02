@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module ifidbuffer(
+module IF-IDBuffer(
     input clk,
 
     input [32:0] in_pc,

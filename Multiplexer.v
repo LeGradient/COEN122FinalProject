@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module mux(
+module Multiplexer(
     input in_data0,
     input in_data1,
     input select,

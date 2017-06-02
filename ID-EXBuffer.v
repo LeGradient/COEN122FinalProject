@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module idexbuffer(
+module ID-EXBuffer(
     input clk,
 
     /* WB Control */

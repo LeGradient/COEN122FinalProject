@@ -1,6 +1,6 @@
 `timescale 1ns / 1ps
 
-module exwbbuffer (
+module EX-WBBuffer(
 	input clk,
 
     /* WB Control */
