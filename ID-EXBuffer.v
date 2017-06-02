@@ -14,8 +14,7 @@ module ID-EXBuffer(
     input in_ctrl_memrd,
     input in_ctrl_memwrt,
     input [2:0] in_ctrl_aluop,
-    input in_ctrl_alusrc1,
-    input in_ctrl_alusrc0,
+    input in_ctrl_alusrc,
 
     /* EX Data */
     input [31:0] in_pc,
@@ -35,8 +34,7 @@ module ID-EXBuffer(
     output reg out_ctrl_memrd,
     output reg out_ctrl_memwrt,
     output reg [2:0] out_ctrl_aluop,
-    output reg out_ctrl_alusrc1,
-    output reg out_ctrl_alusrc0,
+    output reg out_ctrl_alusrc,
 
     /* EX Data */
     output reg [31:0] out_pc,
@@ -57,8 +55,7 @@ module ID-EXBuffer(
     reg ctrl_memrd_buff;
     reg ctrl_memwrt_buff;
     reg [2:0] ctrl_aluop_buff;
-    reg ctrl_alusrc1_buff;
-    reg ctrl_alusrc0_buff;
+    reg ctrl_alusrc_buff;
 
     /* EX Data Buffer */ 
     reg [31:0] pc_buff;
@@ -79,8 +76,7 @@ module ID-EXBuffer(
         ctrl_memrd_buff = in_ctrl_memrd;
         ctrl_memwrt_buff = in_ctrl_memwrt;
         ctrl_aluop_buff = in_ctrl_aluop;
-        ctrl_alusrc1_buff = in_ctrl_alusrc1;
-        ctrl_alusrc0_buff = in_ctrl_alusrc0;
+        ctrl_alusrc_buff = in_ctrl_alusrc;
 
         /* EX Data */
         pc_buff = in_pc;
@@ -102,8 +98,7 @@ module ID-EXBuffer(
         out_ctrl_memrd = ctrl_memrd_buff;
         out_ctrl_memwrt = ctrl_memwrt_buff;
         out_ctrl_aluop = ctrl_aluop_buff;
-        out_ctrl_alusrc1 = ctrl_alusrc1_buff;
-        out_ctrl_alusrc0 = ctrl_alusrc0_buff;
+        out_ctrl_alusrc = ctrl_alusrc_buff;
 
         /* EX Data */
         out_pc = pc_buff;
