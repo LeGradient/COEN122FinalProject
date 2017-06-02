@@ -1,3 +1,6 @@
+/* FIXME: 
+FIX PASS AND NOOP
+*/ 
 `timescale 1ns / 1ps
 
 module ALU (
