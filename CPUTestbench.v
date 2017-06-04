@@ -2,13 +2,15 @@
 
 module CPUTestbench();
     reg clk;
-    
+
     CPU DUT (.clk(clk));
-    
+
     initial begin
         clk = 0;
     end
-    
-    always
+
+    always begin
         #100 clk = !clk;
+        #1000 $finish;
+    end
 endmodule
