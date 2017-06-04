@@ -34,6 +34,9 @@ module RegisterFile (
         // DATA 4
         regfile[1] = 12;
         regfile[2] = 'h20;*/
+
+        out_rsval = 0;
+        out_rtval = 0;
     end
 
     always @(posedge clk) begin

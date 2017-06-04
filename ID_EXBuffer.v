@@ -63,7 +63,26 @@ module ID_EXBuffer(
     reg [31:0] rt_buff;
     reg [31:0] x_buff;
     reg [5:0] rd_buff;
-    
+
+    initial begin
+        out_ctrl_regwrt = 0;
+        out_ctrl_branch = 0;
+        out_ctrl_btype = 0;
+        out_ctrl_jump = 0;
+        out_ctrl_memtoreg = 0;
+
+        out_ctrl_memrd = 0;
+        out_ctrl_memwrt = 0;
+        out_ctrl_aluop = 011;
+        out_ctrl_alusrc = 0;
+
+        out_pc = 0;
+        out_rs = 0;
+        out_rt = 0;
+        out_x = 0;
+        out_rd = 0;     
+    end
+
     always@(posedge clk) begin
         /* WB Control */ 
         ctrl_regwrt_buff = in_ctrl_regwrt;

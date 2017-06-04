@@ -14,6 +14,7 @@ module InstructionMemory (
             imem[i] = 0;
         end
         $readmemb("machinecode.txt", imem, 0, 10);
+        out_inst = 0;
     end
 
     always @(posedge clk)

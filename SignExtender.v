@@ -8,6 +8,10 @@ module SignExtender (
 
     integer i;
 
+    initial begin
+        out = 0;
+    end
+
     always @(posedge clk) begin
         out = in;
         for (i = 22; i < 32; i = i + 1)

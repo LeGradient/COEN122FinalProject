@@ -7,8 +7,10 @@ module ProgramCounter (
     );
     reg [31:0] pc;
 
-    initial
+    initial begin
         pc = 0;
+        out = 0;
+    end
 
     always @(posedge clk) begin
         pc = in;
