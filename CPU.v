@@ -138,7 +138,7 @@ module CPU(
 		.in_ctrl_select(pcmux_in_ctrl_select),
 		.out_data(pcmux_out_data)
 	);
-	
+
 	ProgramCounter pc (
 		.clk(clk),
 		.in(pc_in),
@@ -157,7 +157,7 @@ module CPU(
 		.out_inst(imem_out_inst)
 	);
 
-	IF-IDBuffer ifidbuff (
+	IF_IDBuffer ifidbuff (
 		.clk(clk),
 		.in_pc(ifidbuff_in_pc),
 		.in_inst(ifidbuff_in_inst),
@@ -320,7 +320,7 @@ module CPU(
 
 	assign ifidbuff_in_pc = pc_out;
 	assign ifidbuff_in_inst = imem_out_inst;
-	
+
 	assign regfile_in_ctrl_regwrt = exwbbuff_out_ctrl_regwrt;
 	assign regfile_in_rs = ifidbuff_out_inst[21:16];
 	assign regfile_in_rt = ifidbuff_out_inst[15:10];
