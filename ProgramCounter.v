@@ -10,10 +10,11 @@ module ProgramCounter (
     initial
         pc = 0;
 
-    always @(posedge clk)
+    always @(posedge clk) begin
         pc = in;
+    end
 
-    always @(negedge clk)
+    always @(negedge clk) begin
         out = pc;
-
+    end
 endmodule // ProgramCounter
