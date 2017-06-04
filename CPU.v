@@ -333,6 +333,7 @@ module CPU(
 
 	assign idexbuff_in_ctrl_regwrt = control_out_ctrl_regwrt;
 	assign idexbuff_in_ctrl_branch = control_out_ctrl_branch;
+	assign idexbuff_in_ctrl_jump = control_out_ctrl_jump;
 	assign idexbuff_in_ctrl_memrd = control_out_ctrl_memrd;
 	assign idexbuff_in_ctrl_btype = control_out_ctrl_btype;
 	assign idexbuff_in_ctrl_memtoreg = control_out_ctrl_memtoreg;
