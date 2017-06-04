@@ -53,7 +53,7 @@ module CPU(
 	wire idexbuff_in_ctrl_memtoreg;
 	wire idexbuff_in_ctrl_memrd;
 	wire idexbuff_in_ctrl_memwrt;
-	wire idexbuff_in_ctrl_aluop;
+	wire [2:0] idexbuff_in_ctrl_aluop;
 	wire idexbuff_in_ctrl_alusrc;
 	wire [31:0] idexbuff_in_pc;
 	wire [31:0] idexbuff_in_rs;
@@ -67,7 +67,7 @@ module CPU(
 	wire idexbuff_out_ctrl_memtoreg;
 	wire idexbuff_out_ctrl_memrd;
 	wire idexbuff_out_ctrl_memwrt;
-	wire idexbuff_out_ctrl_aluop;
+	wire [2:0] idexbuff_out_ctrl_aluop;
 	wire idexbuff_out_ctrl_alusrc;
 	wire [31:0] idexbuff_out_pc;
 	wire [31:0] idexbuff_out_rs;
@@ -132,7 +132,7 @@ module CPU(
 	wire [31:0] memtoreg_out_data;
 
 	/* Modules */
-	Mutliplexer pcmux (
+	Multiplexer pcmux (
 		.in_data0(pcmux_in_data0),
 		.in_data1(pcmux_in_data1),
 		.in_ctrl_select(pcmux_in_ctrl_select),
@@ -241,14 +241,14 @@ module CPU(
 		.out_data(datamem_out_data)
 	);
 
-	Mutliplexer alumuxa (
+	Multiplexer alumuxa (
 		.in_data0(alumuxa_in_data0),
 		.in_data1(alumuxa_in_data1),
 		.in_ctrl_select(alumuxa_in_ctrl_select),
 		.out_data(alumuxa_out_data)
 	);
 
-	Mutliplexer alumuxb (
+	Multiplexer alumuxb (
 		.in_data0(alumuxb_in_data0),
 		.in_data1(alumuxb_in_data1),
 		.in_ctrl_select(alumuxb_in_ctrl_select),
@@ -357,7 +357,7 @@ module CPU(
 
 	assign alumuxb_in_data0 = idexbuff_out_rt;
 	assign alumuxb_in_data1 = idexbuff_out_x;
-	assign alumuxb_in_ctrl_select = contorl_out_ctrl_alusrc;
+	assign alumuxb_in_ctrl_select = control_out_ctrl_alusrc;
 
 	assign alu_in_a = alumuxa_out_data;
 	assign alu_in_b = alumuxb_out_data;
