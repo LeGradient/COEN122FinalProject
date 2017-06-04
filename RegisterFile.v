@@ -12,11 +12,12 @@ module RegisterFile (
     );
 
     integer i;
-    reg [31:0] regfile [63:0];
+    reg [31:0] regfile [63:0];      //we have 64 32-bit registers
 
     initial begin
         for (i = 0; i < 64; i = i + 1)
             regfile[i] = 0;
+
     end
 
     always @(posedge clk) begin
