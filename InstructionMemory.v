@@ -10,8 +10,13 @@ module InstructionMemory (
     reg [31:0] imem [65535:0];
 
     initial begin
-        for (i = 0; i < 65536; i = i + 1)
+        for (i = 0; i < 65536; i = i + 1) begin
             imem[i] = 0;
+        end
+        $readmemb("machinecode.txt", imem);
+        for (i = 0; i < 11; i = i + 1) begin
+            $display("%h", imem[i]);
+        end
     end
 
     always @(posedge clk)

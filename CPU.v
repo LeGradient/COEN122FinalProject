@@ -383,5 +383,4 @@ module CPU(
 	assign memtoreg_in_data0 = exwbbuff_out_aluresult;
 	assign memtoreg_in_data1 = exwbbuff_out_memdata;
 	assign memtoreg_in_ctrl_select = exwbbuff_out_ctrl_memtoreg;
-
 endmodule
