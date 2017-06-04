@@ -1,6 +1,3 @@
-/* FIXME:
-FIX PASS AND NOOP
-*/
 `timescale 1ns / 1ps
 
 module ALU (
@@ -12,6 +9,12 @@ module ALU (
         output reg out_zero,
         output reg out_neg
     );
+
+    initial begin
+        out_result = 0;
+        out_zero = 0;
+        out_neg = 0;
+    end
 
     always @(posedge clk) begin
         if (in_ctrl_aluop == 3'b100)

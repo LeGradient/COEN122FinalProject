@@ -13,6 +13,8 @@ module DataMemory(
 
     integer i;
     initial begin
+        out_data = 0;
+
         for (i = 0; i < 65536; i = i + 1) begin
             mem[i] = i;
         end

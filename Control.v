@@ -13,6 +13,18 @@ module Control (
         output reg out_ctrl_jump
     );
 
+    initial begin
+        out_ctrl_regwrt = 0;
+        out_ctrl_memrd = 0;
+        out_ctrl_memwrt = 0;
+        out_ctrl_alusrc = 0;
+        out_ctrl_aluop = 3'b011;    // NOP
+        out_ctrl_memtoreg = 0;
+        out_ctrl_branch = 0;
+        out_ctrl_btype = 0;
+        out_ctrl_jump = 0;
+    end
+
     always @(in_opcode) begin
         out_ctrl_memrd = !in_opcode[3] && !in_opcode[2] && !in_opcode[1] && in_opcode[0]
                     || in_opcode[3] && in_opcode[1] && !in_opcode[0];
