@@ -21,19 +21,19 @@ module RegisterFile (
 
         // DATA 1
         regfile[1] = 8;
-        regfile[2] = 8'h100;
+        regfile[2] = 'h100;
 
         /*// DATA 2
         regfile[1] = 10;
-        regfile[2] = 8'h80;
+        regfile[2] = 'h80;
 
         // DATA 3
         regfile[1] = 6;
-        regfile[2] = 8'h40;
+        regfile[2] = 'h40;
 
         // DATA 4
         regfile[1] = 12;
-        regfile[2] = 8'h20;*/
+        regfile[2] = 'h20;*/
     end
 
     always @(posedge clk) begin
