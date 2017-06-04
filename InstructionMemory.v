@@ -15,7 +15,7 @@ module InstructionMemory (
         end
         $readmemb("machinecode.txt", imem);
         for (i = 0; i < 11; i = i + 1) begin
-            $display("%h", imem[i]);
+            $display("%b", imem[i]);
         end
     end
 
