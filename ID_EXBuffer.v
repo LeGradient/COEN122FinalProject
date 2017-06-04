@@ -43,7 +43,7 @@ module ID_EXBuffer(
     output reg [31:0] out_x,
     output reg [5:0] out_rd
     );
-    
+
     /* WB Control Bufffer */
     reg ctrl_regwrt_buff;
     reg ctrl_branch_buff;
@@ -57,7 +57,7 @@ module ID_EXBuffer(
     reg [2:0] ctrl_aluop_buff;
     reg ctrl_alusrc_buff;
 
-    /* EX Data Buffer */ 
+    /* EX Data Buffer */
     reg [31:0] pc_buff;
     reg [31:0] rs_buff;
     reg [31:0] rt_buff;
@@ -65,6 +65,23 @@ module ID_EXBuffer(
     reg [5:0] rd_buff;
 
     initial begin
+        ctrl_regwrt_buff = 0;
+        ctrl_branch_buff = 0;
+        ctrl_btype_buff = 0;
+        ctrl_jump_buff = 0;
+        ctrl_memtoreg_buff = 0;
+
+        ctrl_memrd_buff = 0;
+        ctrl_memwrt_buff = 0;
+        ctrl_aluop_buff = 'b011;
+        ctrl_alusrc_buff = 0;
+
+        pc_buff = 0;
+        rs_buff = 0;
+        rt_buff = 0;
+        x_buff = 0;
+        rd_buff = 0;
+
         out_ctrl_regwrt = 0;
         out_ctrl_branch = 0;
         out_ctrl_btype = 0;
@@ -73,18 +90,18 @@ module ID_EXBuffer(
 
         out_ctrl_memrd = 0;
         out_ctrl_memwrt = 0;
-        out_ctrl_aluop = 011;
+        out_ctrl_aluop = 'b011;
         out_ctrl_alusrc = 0;
 
         out_pc = 0;
         out_rs = 0;
         out_rt = 0;
         out_x = 0;
-        out_rd = 0;     
+        out_rd = 0;
     end
 
     always@(posedge clk) begin
-        /* WB Control */ 
+        /* WB Control */
         ctrl_regwrt_buff = in_ctrl_regwrt;
         ctrl_branch_buff = in_ctrl_branch;
         ctrl_btype_buff = in_ctrl_btype;
@@ -104,7 +121,7 @@ module ID_EXBuffer(
         x_buff = in_x;
         rd_buff = in_rd;
     end
-    
+
     always@(negedge clk) begin
         /* WB Control */
         out_ctrl_regwrt = ctrl_regwrt_buff;
@@ -126,5 +143,5 @@ module ID_EXBuffer(
         out_x = x_buff;
         out_rd = rd_buff;
     end
-    
+
 endmodule

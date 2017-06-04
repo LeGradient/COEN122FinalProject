@@ -14,8 +14,10 @@ module IF_IDBuffer(
     reg [31:0] inst_buff;
 
     initial begin
+        pc_buff = 0;
+        inst_buff = 0;
         out_pc = 0;
-        out_inst = 0;    
+        out_inst = 0;
     end
 
     always@(posedge clk) begin
