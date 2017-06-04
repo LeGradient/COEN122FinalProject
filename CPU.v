@@ -195,7 +195,7 @@ module CPU(
         .out_ctrl_jump(control_out_ctrl_jump)
 	);
 
-	ID-EXBuffer idexbuff (
+	ID_EXBuffer idexbuff (
 		.clk(clk),
 		.in_ctrl_regwrt(idexbuff_in_ctrl_regwrt),
 		.in_ctrl_branch(idexbuff_in_ctrl_branch),
@@ -265,7 +265,7 @@ module CPU(
 		.out_neg(alu_out_neg)
 	);
 
-	EX-WBBuffer exwbbuff (
+	EX_WBBuffer exwbbuff (
 		.clk(clk),
 		.in_ctrl_regwrt(exwbbuff_in_ctrl_regwrt),
 		.in_ctrl_branch(exwbbuff_in_ctrl_branch),
