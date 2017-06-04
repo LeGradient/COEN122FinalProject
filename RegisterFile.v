@@ -15,9 +15,25 @@ module RegisterFile (
     reg [31:0] regfile [63:0];      //we have 64 32-bit registers
 
     initial begin
-        for (i = 0; i < 64; i = i + 1)
+        for (i = 0; i < 64; i = i + 1) begin
             regfile[i] = 0;
+        end
 
+        // DATA 1
+        regfile[1] = 8;
+        regfile[2] = 8'h100;
+
+        /*// DATA 2
+        regfile[1] = 10;
+        regfile[2] = 8'h80;
+
+        // DATA 3
+        regfile[1] = 6;
+        regfile[2] = 8'h40;
+
+        // DATA 4
+        regfile[1] = 12;
+        regfile[2] = 8'h20;*/
     end
 
     always @(posedge clk) begin

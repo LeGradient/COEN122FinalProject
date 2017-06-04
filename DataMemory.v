@@ -17,7 +17,17 @@ module DataMemory(
             mem[i] = i;
         end
 
-        // add 
+        // DATA 1
+        $readmemh("data1.txt", mem, 8'h100, 8'h107);
+
+        // DATA 2
+        $readmemh("data2.txt", mem, 8'h80, 8'h89);
+
+        // DATA 3
+        $readmemh("data3.txt", mem, 8'h40, 8'h45);
+
+        // DATA 4
+        $readmemh("data4.txt", mem, 8'h20, 8'h31);
     end
     
     always @(posedge clk) begin

@@ -7,12 +7,12 @@ module InstructionMemory (
     );
 
     integer i;
-    reg [31:0] imem [10:0];
+    reg [31:0] imem [65535:0];
 
     initial begin
-        // for (i = 0; i < 11; i = i + 1) begin
-        //     imem[i] = 0;
-        // end
+        for (i = 0; i < 65535; i = i + 1) begin
+            imem[i] = 0;
+        end
         $readmemb("machinecode.txt", imem, 0, 10);
         for (i = 0; i < 11; i = i + 1) begin
             $display("%b", imem[i]);
