@@ -17,12 +17,10 @@ module InstructionMemory (
         out_inst = 0;
     end
 
-    always @(posedge clk)
+    always @(posedge clk) begin
         out_inst = imem[in_pc];
-
-    always @(clk) begin
-        $display("IMEM in: %d", in_pc);
-        $display("IMEM out: %b", out_inst);
+        $display("PC in: %d", in_pc);
+        $display("IMEM out: %h", out_inst);
     end
 
 endmodule // InstructionMemory
