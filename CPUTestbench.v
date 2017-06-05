@@ -6,6 +6,7 @@ module CPUTestbench();
     CPU DUT (.clk(clk));
 
     initial begin
+    	$dumpvars;
         clk = 0;
         #3000 $finish;
     end
