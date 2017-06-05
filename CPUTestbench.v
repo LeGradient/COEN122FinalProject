@@ -7,7 +7,7 @@ module CPUTestbench();
 
     initial begin
         clk = 0;
-        #10000 $finish;
+        #3000 $finish;
     end
 
     always begin

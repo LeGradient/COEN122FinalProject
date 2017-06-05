@@ -20,4 +20,9 @@ module InstructionMemory (
     always @(posedge clk)
         out_inst = imem[in_pc];
 
+    always @(clk) begin
+        $display("IMEM in: %d", in_pc);
+        $display("IMEM out: %b", out_inst);
+    end
+
 endmodule // InstructionMemory

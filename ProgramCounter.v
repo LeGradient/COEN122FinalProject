@@ -13,10 +13,11 @@ module ProgramCounter (
     end
 
     always @(posedge clk) begin
-        pc = in;
+        out = pc;
+        $display("pc out: %d", pc);
     end
 
     always @(negedge clk) begin
-        out = pc;
+        pc = in;
     end
 endmodule // ProgramCounter
