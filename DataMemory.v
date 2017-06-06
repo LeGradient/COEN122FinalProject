@@ -32,7 +32,7 @@ module DataMemory(
         $readmemh("data4.txt", mem, 'h20, 'h2B);
     end
 
-    always @(posedge clk) begin
+    always @(in_ctrl_read or in_ctrl_write or in_addr or in_data) begin
         if (in_ctrl_write == 1)
             mem[in_addr] = in_data;
         if (in_ctrl_read == 1)
