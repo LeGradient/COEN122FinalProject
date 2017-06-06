@@ -1,7 +1,7 @@
 `timescale 1ns / 1ps
 
 module InstructionMemory (
-        input clk,
+        //input clk,
         input [31:0] in_pc,
         output reg [31:0] out_inst
     );
@@ -17,10 +17,8 @@ module InstructionMemory (
         out_inst = 0;
     end
 
-    always @(posedge clk) begin
+    always @(in_pc) begin
         out_inst = imem[in_pc];
-        $display("PC in: %d", in_pc);
-        $display("IMEM out: %h", out_inst);
     end
 
 endmodule // InstructionMemory

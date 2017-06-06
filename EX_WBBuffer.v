@@ -69,7 +69,7 @@ module EX_WBBuffer(
 		out_ctrl_zero = 0;
 	end
 
-    always@(posedge clk) begin
+    always@(negedge clk) begin
         /* WB Control */
         ctrl_regwrt_buff = in_ctrl_regwrt;
         ctrl_branch_buff = in_ctrl_branch;
@@ -85,7 +85,7 @@ module EX_WBBuffer(
         rd_buff = in_rd;
     end
 
-    always@(negedge clk) begin
+    always@(posedge clk) begin
         /* WB Control */
         out_ctrl_regwrt = ctrl_regwrt_buff;
         out_ctrl_branch = ctrl_branch_buff;

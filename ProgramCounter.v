@@ -12,11 +12,11 @@ module ProgramCounter (
         out = 0;
     end
 
-    always @(negedge clk) begin
+    always @(posedge clk) begin
         out = pc;
     end
 
-    always @(posedge clk) begin
+    always @(negedge clk) begin
         pc = in;
     end
 endmodule // ProgramCounter
