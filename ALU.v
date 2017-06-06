@@ -16,7 +16,7 @@ module ALU (
         out_neg = 0;
     end
 
-    always @(posedge clk) begin
+    always @(in_a or in_b or in_ctrl_aluop) begin
         if (in_ctrl_aluop == 3'b100)
             out_result = in_b + in_a;
         else if (in_ctrl_aluop == 3'b010)
