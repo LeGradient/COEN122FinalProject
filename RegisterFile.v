@@ -39,7 +39,7 @@ module RegisterFile (
         out_rtval = 0;
     end
 
-    always @(posedge clk) begin
+    always @(in_rs or in_rt or in_rd or in_rdval or in_ctrl_regwrt) begin
         if (in_ctrl_regwrt)
             regfile[in_rd] = in_rdval;
         out_rsval = regfile[in_rs];
