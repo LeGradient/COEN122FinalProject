@@ -146,13 +146,13 @@ module CPU(
 	);
 
 	PCIncrementer pcincrementer (
-		.clk(clk),
+		//.clk(clk),
 		.in_pc(pcincrementer_in_pc),
 		.out_pc(pcincrementer_out_pc)
 	);
 
 	InstructionMemory imem (
-		.clk(clk),
+		//.clk(clk),
 		.in_pc(imem_in_pc),
 		.out_inst(imem_out_inst)
 	);

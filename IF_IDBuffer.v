@@ -20,12 +20,12 @@ module IF_IDBuffer(
         out_inst = 0;
     end
 
-    always@(posedge clk) begin
+    always@(negedge clk) begin
         pc_buff = in_pc;
         inst_buff = in_inst;
     end
 
-    always@(negedge clk) begin
+    always@(posedge clk) begin
         out_pc = pc_buff;
         out_inst = inst_buff;
     end
