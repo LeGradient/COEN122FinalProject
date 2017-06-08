@@ -28,10 +28,10 @@ module ALU (
         else if (in_ctrl_aluop == 3'b111)
             out_result = in_a;
 
-        // don't change flags if NOP
-        if (in_ctrl_aluop != 3'b011) begin
+        // don't change flags if pass
+        if (in_ctrl_aluop != 3'b111) begin
             out_zero = out_result == 0;
-            out_neg = out_result < 0;
+            out_neg = out_result[31];
         end
     end
 

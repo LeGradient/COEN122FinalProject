@@ -354,11 +354,11 @@ module CPU(
 
 	assign alumuxa_in_data0 = idexbuff_out_rs;
 	assign alumuxa_in_data1 = idexbuff_out_pc;
-	assign alumuxa_in_ctrl_select = control_out_ctrl_alusrc;
+	assign alumuxa_in_ctrl_select = idexbuff_out_ctrl_alusrc;
 
 	assign alumuxb_in_data0 = idexbuff_out_rt;
 	assign alumuxb_in_data1 = idexbuff_out_x;
-	assign alumuxb_in_ctrl_select = control_out_ctrl_alusrc;
+	assign alumuxb_in_ctrl_select = idexbuff_out_ctrl_alusrc;
 
 	assign alu_in_a = alumuxa_out_data;
 	assign alu_in_b = alumuxb_out_data;
