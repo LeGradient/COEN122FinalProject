@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
 
 module ALU (
-        input clk,
         input [31:0] in_a,
         input [31:0] in_b,
         input [2:0] in_ctrl_aluop,

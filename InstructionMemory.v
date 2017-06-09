@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
 
 module InstructionMemory (
-        //input clk,
         input [31:0] in_pc,
         output reg [31:0] out_inst
     );

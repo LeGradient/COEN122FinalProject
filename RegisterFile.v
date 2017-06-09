@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
 
 module RegisterFile (
-        input clk,
         input in_ctrl_regwrt,
         input [5:0] in_rs,
         input [5:0] in_rt,
@@ -17,6 +16,7 @@ module RegisterFile (
     initial begin
         for (i = 0; i < 64; i = i + 1) begin
             regfile[i] = 0;
+            $dumpvars(0, regfile[i]);
         end
 
         // // DATA 1

@@ -1,7 +1,6 @@
 `timescale 1ns / 1ps
 
 module DataMemory(
-    input clk,
     input in_ctrl_read,
     input in_ctrl_write,
     input [31:0] in_addr,

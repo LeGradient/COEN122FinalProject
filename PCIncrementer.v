@@ -5,7 +5,6 @@ module PCIncrementer (
         output reg [31:0] out_pc
     );
 
-    //always @(posedge clk)
     always @(in_pc)
         out_pc = in_pc + 1;
 

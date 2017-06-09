@@ -146,13 +146,11 @@ module CPU(
 	);
 
 	PCIncrementer pcincrementer (
-		//.clk(clk),
 		.in_pc(pcincrementer_in_pc),
 		.out_pc(pcincrementer_out_pc)
 	);
 
 	InstructionMemory imem (
-		//.clk(clk),
 		.in_pc(imem_in_pc),
 		.out_inst(imem_out_inst)
 	);
@@ -166,7 +164,6 @@ module CPU(
 	);
 
 	RegisterFile regfile (
-		.clk(clk),
 		.in_ctrl_regwrt(regfile_in_ctrl_regwrt),
 		.in_rs(regfile_in_rs),
 		.in_rt(regfile_in_rt),
@@ -177,7 +174,6 @@ module CPU(
 	);
 
 	SignExtender extender (
-		.clk(clk),
 		.in(extender_in),
 		.out(extender_out)
 	);
@@ -233,7 +229,6 @@ module CPU(
 	);
 
 	DataMemory datamem (
-		.clk(clk),
 		.in_ctrl_read(datamem_in_ctrl_read),
 		.in_ctrl_write(datamem_in_ctrl_write),
 		.in_addr(datamem_in_addr),
@@ -256,7 +251,6 @@ module CPU(
 	);
 
 	ALU alu (
-		.clk(clk),
 		.in_a(alu_in_a),
 		.in_b(alu_in_b),
 		.in_ctrl_aluop(alu_in_ctrl_aluop),
